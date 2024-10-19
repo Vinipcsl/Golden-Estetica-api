@@ -1,11 +1,8 @@
-
+import repoDoutor from "../repositories/repositoy.doutores.js";
 
 async function Listar() {
     
-    const doutores = [
-        {i: 1, nome: "May", especialidade: "Estetica", icon: "F"},
-        {i: 2, nome: "Vini", especialidade: "Programa", icon: "M"},
-    ];
+    const doutores = await repoDoutor.Listar();
     
     return doutores;
 }
