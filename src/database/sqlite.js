@@ -19,4 +19,4 @@ const db = new SQLite.Database("./src/database/banco.db",
                 return console.log("Erro ao conectar com banco: " + err.message);
                         })
 
-                        export{db};
+export{db, query};
