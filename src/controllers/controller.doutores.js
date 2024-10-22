@@ -40,4 +40,14 @@ async function Deletar(req, res) {
     res.status(200).json(doutor);
 }
 
-export default {Listar, Inserir, Editar, Deletar }
+
+async function ListarServicos(req, res) {
+
+    const id_doutor = req.params.id_doutor;
+    const servicos = await serviceDoutores.ListarServicos(id_doutor);
+
+
+    res.status(200).json(servicos);
+}
+
+export default {Listar, Inserir, Editar, Deletar, ListarServicos }

@@ -11,9 +11,16 @@ router.post("/doutores", jwt.ValidarToken, controllerDoutores.Inserir);
 router.put("/doutores/:id_doutor", jwt.ValidarToken, controllerDoutores.Editar);
 router.delete("/doutores/:id_doutor", jwt.ValidarToken, controllerDoutores.Deletar);
 
+//rotas de serviços dos doutores
+router.get("/doutores/:id_doutor/servicos", jwt.ValidarToken, controllerDoutores.ListarServicos);
+
 //rotas de usuários
 router.post("/user/registro", controllerUsuarios.Inserir);
 router.post("/user/login", controllerUsuarios.Login);
+
+//rotas de reserva
+
+
 
 
 

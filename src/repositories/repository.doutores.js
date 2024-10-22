@@ -51,4 +51,18 @@ async function Deletar(id_doutor) {
      return {id_doutor};
 }
 
-export default {Listar, Inserir, Editar, Deletar }
+async function ListarServicos(id_doutor) {
+    
+
+   let sql = `select ds.id_servico, s.descricao, ds.preco
+                from doutores_servicos ds
+                join servicos s on (s.id_servico = ds.id_servico)
+                where ds.id_doutor = ?
+                order by s.descricao`;
+
+   const servicos = await query(sql, [id_doutor]);
+    
+    return servicos;
+}
+
+export default {Listar, Inserir, Editar, Deletar, ListarServicos }
