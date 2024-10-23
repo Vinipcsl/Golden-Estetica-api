@@ -58,7 +58,7 @@ async function ListarServicos(id_doutor) {
                 from doutores_servicos ds
                 join servicos s on (s.id_servico = ds.id_servico)
                 where ds.id_doutor = ?
-                order by s.descricao`;
+                order by s.id_servico`;
 
    const servicos = await query(sql, [id_doutor]);
     

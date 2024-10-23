@@ -33,6 +33,13 @@ async function Login(email, senha) {
     }    
 }
 
+async function Perfil(id_user) {
+    
+    const usuario = await repoUser.Perfil(id_user);
+    
+    return usuario;
+}
 
 
-export default { Inserir, Login }
+
+export default { Inserir, Login, Perfil }

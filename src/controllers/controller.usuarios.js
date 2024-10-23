@@ -24,4 +24,13 @@ async function Login(req, res) {
         res.status(200).json(usuario);
 }
 
-export default { Inserir, Login }
+async function Perfil(req, res) {
+
+    const idUsuario = req.id_user;
+    const usuario = await serviceUsuarios.Perfil(idUsuario);
+
+
+    res.status(200).json(usuario);
+}
+
+export default { Inserir, Login, Perfil }
